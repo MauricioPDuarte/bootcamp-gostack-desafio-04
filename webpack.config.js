@@ -17,6 +17,9 @@ module.exports = {
     // Nome do arquivo
     filename: 'bundle.js',
   },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'public'),
+  },
 
   /* 
   * Regras, 
