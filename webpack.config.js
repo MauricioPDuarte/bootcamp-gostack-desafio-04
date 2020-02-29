@@ -29,15 +29,25 @@ module.exports = {
       {
         // Transpilar todos os arquivos .js
         test: /\.js$/,
-
         // Nao transpilar
         exclude: /node_modules/,
-
-        // 
         use: {
           loader: 'babel-loader'
         }
-      }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+        ]
+      },
+      {
+        test: /.*\.(gif|png|jpg?e)$/i,
+        use: {
+          loader: 'file-loader'
+        }
+      },
     ]
   }
 };
